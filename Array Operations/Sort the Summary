@@ -1,0 +1,87 @@
+#Insert user input array, counting duplicate integers(values of frequency), descending order display (First Method)
+#Python 3 (Written By: Parth Bhavsar) 
+
+#1 creating empty array
+arr = []
+
+#2 numbers of elements as input
+n = int(input("Enter numbers of elements : "))
+
+#3 integrating range of array
+for i in range(0,n):
+    elements = int(input())
+    arr.append(elements)
+#print(mylst)  
+#4 sorting array
+arr.sort()
+#print(mylst)
+
+#Counting duplicate elements in array
+count = {}
+for num in arr:
+    if not num in count:
+        count[num] = 1
+    else:
+        count[num]+= 1
+print(count)        
+
+------------------------------------------
+Output :
+Enter numbers of elements : 5
+11
+11
+11
+22
+22
+{11: 3, 22: 2}
+
+
+#Insert user input array, counting duplicate integers(values of frequency), descending order display (Second Method)
+#Python 3 (Written By: Parth Bhavsar) 
+
+#1 creating empty array
+int_arr = []
+
+#2 numbers of elements as input
+num = int(input("Enter numbers of elements :"))
+
+#3 integrating range of array
+for p in range(0,num):
+    elements = int(input())
+    int_arr.append(elements)
+#4 sorting array
+arr = sorted(int_arr, key = int_arr.count, reverse = True)    
+
+#5 define frequency logic
+
+def arrayrepetnum(arr, size):
+    operation = {}
+    for i in range(0, size):
+        operation[arr[i]] = \
+        operation.get(arr[i],0)+1
+    return operation
+
+#6 Action Code 
+
+if __name__== "__main__":
+    
+    
+    #arr = [4,4,5,5,5,6]
+    arr_size = len(arr)
+    operation = arrayrepetnum(arr,arr_size)
+    print("Result")    
+    for i in operation:
+        print(i, " ", operation[i]) 
+
+-----------------------------------
+
+Output:
+Enter numbers of elements :5
+4
+4
+8
+8
+8
+Result
+8   3
+4   2
