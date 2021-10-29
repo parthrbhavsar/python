@@ -49,7 +49,7 @@ num = int(input("Enter numbers of elements :"))
 for p in range(0,num):
     elements = int(input())
     int_arr.append(elements)
-#4 sorting array(Descending Order by Frequency)
+#4 sorting array(Descending Order by Frequency Value)
 arr = sorted(int_arr, key = int_arr.count, reverse = True)    
 
 #5 define frequency logic
