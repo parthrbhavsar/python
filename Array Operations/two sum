@@ -1,0 +1,42 @@
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+
+#Python 3 (Written By: Parth Bhavsar) 
+
+class Solutions:
+    def twosum_index(self, num, target):
+        for i, a in enumerate(num, start = 0):
+            for j, b in enumerate(num[i+1:], start = 0):
+                if a+b == target:
+                    return [i,i+j+1]
+
+#Drive code                
+test_case = Solutions()
+arr = []
+n = int(input("Enter Array Size :"))
+for _ in range(n):
+    element = int(input())
+    arr.append(element)
+target = int(input("Enter number of Sum target :"))
+print("Output : index are")
+print(test_case.twosum_index(arr,target))
+
+
+Output :
+Enter Array Size :4
+4
+5
+6
+7
+Enter number of Sum :10
+Output : index are
+[0, 2]
